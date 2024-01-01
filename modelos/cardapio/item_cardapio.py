@@ -1,4 +1,6 @@
-class ItemCardapio:
+from abc import ABC, abstractmethod
+
+class ItemCardapio(ABC):
     def __init__(self, nome, preco):
         """Construtor"""
         self._nome = nome
@@ -6,3 +8,7 @@ class ItemCardapio:
         
     def __str__(self):
         return self._nome
+    
+    @abstractmethod
+    def aplicar_desconto(self):
+        pass
